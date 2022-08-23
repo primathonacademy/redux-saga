@@ -16,7 +16,7 @@ const jokeReducer = (state = defaultState, action) => {
     case Action.FETCH_FAILED:
       return {
         ...state,
-        fact: '',
+        joke: '',
         error: true,
         message: action.payload.message,
       };

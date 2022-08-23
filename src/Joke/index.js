@@ -1,3 +1,4 @@
+import { useEffect, userEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Action from '../store/action';
@@ -5,6 +6,9 @@ import Action from '../store/action';
 import './style.css';
 
 const Joke = () => {
+  const entireStore = useSelector((state) => state);
+  console.log('entireStore: ', entireStore);
+
   const joke = useSelector((state) => state.joke);
   const dispatch = useDispatch();
 
@@ -12,6 +16,10 @@ const Joke = () => {
     console.log('onGetAnotherFact');
     dispatch({ type: Action.FETCH_REQUEST });
   };
+
+  useEffect(() => {
+    dispatch({ type: Action.FETCH_REQUEST });
+  }, []);
 
   return (
     <div className='container'>

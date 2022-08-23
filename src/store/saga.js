@@ -4,6 +4,7 @@ import Action from './action';
 import { fetchJokeApi } from '../api';
 
 // worker saga: will be fired on fetch math fact actions
+// Generator function ..................................
 function* fetchJoke(action) {
   console.log('### fetchJoke worker saga action : ', action);
 
