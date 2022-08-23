@@ -9,6 +9,9 @@ function* fetchJoke(action) {
 
   try {
     const res = yield call(fetchJokeApi);
+
+    console.log('### res', res);
+
     yield put({ type: Action.FETCH_SUCCESS, payload: { joke: res.joke } });
   } catch (e) {
     yield put({

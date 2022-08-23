@@ -8,8 +8,6 @@ const Joke = () => {
   const joke = useSelector((state) => state.joke);
   const dispatch = useDispatch();
 
-  console.log(dispatch);
-
   const onGetAnotherFact = () => {
     console.log('onGetAnotherFact');
     dispatch({ type: Action.FETCH_REQUEST });
